@@ -1,0 +1,52 @@
+:root {
+ --primary: #0e8388;
+}
+.nav-link {
+ padding: 0.5rem 0.5rem !important;
+}
+
+.signup{
+ border:  2px solid gray;
+ border-radius: 3px;
+ display: inline-flex !important;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+}
+.signup:hover{
+ background-color: rgba(118, 118, 118, 0.42);
+ color: white;
+}
+.signup:active{
+ transform: scale(0.95);
+}
+
+
+
+
+
+
+.submit{
+ background-color: var(--primary) !important;
+ border: none !important;
+ outline: none !important;
+}
+
+.submit:hover{
+ color: white !important;
+ background-color: #0b6c70f7 !important;
+}
+
+.submit:active{
+ outline: none !important;
+ border: none !important;
+ scrollbar-highlight-color: #0e8388 !important;
+ transform: scale(0.95);
+ transition: 0.2s;
+}
+
+
+
+.btn-primary{
+ background-color: #0e8388 !important;
+}

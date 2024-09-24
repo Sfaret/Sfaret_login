@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Shares Calculator Section</title>
+    <style>
+        /* Body Styles (Ensure global styles are untouched) */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: inherit; /* Match your main website's background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Section Container */
+        .calculator-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background-color: #f4f4f9; /* Section background color */
+        }
+
+        /* Calculator Card */
+        .card {
+            background: #ffffff; /* Card background to match website theme */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Text Styling */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Input Field */
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        /* Result Styling */
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .result p {
+            font-size: 18px;
+            color: #2d89e5;
+            font-weight: bold;
+        }
+
+        /* Button Styles */
+        .calculate-btn {
+            width: 100%;
+            background-color: #2d89e5;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculate-btn:hover {
+            background-color: #1a5cbf;
+        }
+
+        /* Animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Isolated IPO Calculator Section -->
+    <section class="calculator-section">
+        <div class="card">
+            <h1>IPO Shares Calculator</h1>
+            <label for="investment">Enter Investment Amount (₦):</label>
+            <input type="number" id="investment" placeholder="Enter amount in Naira">
+            <button class="calculate-btn" onclick="calculateShares()">Calculate Shares</button>
+            <div class="result fade-in" id="result">
+                <p>Total Shares: <span id="totalShares">0</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const pricePerShare = 10000;  // Price for 0.002 shares (₦10,000)
+        const shareUnit = 0.002;      // Shares per ₦10,000
+
+        function calculateShares() {
+            let investmentAmount = document.getElementById("investment").value;
+
+            if (investmentAmount <= 0) {
+                document.getElementById("totalShares").innerHTML = "0";
+                return;
+            }
+
+            // Calculate the total shares based on the investment amount
+            let totalShares = (investmentAmount / pricePerShare) * shareUnit;
+
+            // Display the result with 4 decimal places
+            document.getElementById("totalShares").innerHTML = totalShares.toFixed(4);
+            document.getElementById("result").classList.add("fade-in");
+        }
+    </script>
+</body>
+</html>
