@@ -61,7 +61,7 @@ google.addEventListener("click",
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
 
 
 
