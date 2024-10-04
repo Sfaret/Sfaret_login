@@ -41,7 +41,7 @@ login.addEventListener("click", function (event) {
  signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
    const user = userCredential.user;
-   window.location.href = "dashboard.html";
+   window.location.href = "index.html";
   })
   .catch((error) => {
    const errorCode = error.code;
@@ -64,7 +64,7 @@ google.addEventListener("click",
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
 
 
   }).catch((error) => {
